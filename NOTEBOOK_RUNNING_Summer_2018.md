@@ -28,6 +28,16 @@ Found more accelerometer codes to try because the others were giving unrealistic
 * [GitHub Accelerometer code](https://gist.github.com/nthdesign/407ea40ae035269dd3cfd7ec81402281) Used at first, but discarded because I was not sure how certain values were obtained and was not able to interpret.
 * [Accelerometer code being used now](https://www.sunfounder.com/learn/lesson-15-adxl335-super-kit.html)
 
+Started looking into SD card reader:
+* [Adafruit Data Logging Shield](https://learn.adafruit.com/adafruit-data-logger-shield/overview) needs a circular battery at all times to use.
+
+Plotting data from Arduino:
+* [Need to sync MatLab and Arduino IDE](https://arduino.stackexchange.com/questions/17319/plotting-a-real-time-graph-of-sensor-data-from-arduino-on-processing-matlab-or)
+* [MatLab-Arduino Code](https://www.mathworks.com/help/supportpkg/arduinoio/ref/arduino.html)
+Most websites searched, there is no way to directly write data toa text file from Arduino IDE. A processing program or an SD card are the best options. Currently allowing some data to run and then copy-pasting to an Excel file to analyze and plot with MatLab.
+
+
+
 Things we learned. 
 
 Adafruit drivers notes please! 
