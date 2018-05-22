@@ -36,7 +36,7 @@ Plotting data from Arduino:
 * [MatLab-Arduino Code](https://www.mathworks.com/help/supportpkg/arduinoio/ref/arduino.html)
 Most websites searched, there is no way to directly write data toa text file from Arduino IDE. A processing program or an SD card are the best options. Currently allowing some data to run and then copy-pasting to an Excel file to analyze and plot with MatLab.
 
-
+***Wednesday's task: get SD card arduino to work and save data to analyze***
 
 Things we learned. 
 
