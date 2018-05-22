@@ -23,7 +23,7 @@ Figured out USB port problem:
 * [Driver needed for Mac OSX](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) **IS NOT SUPPORTED BY MAC OS X YOSEMITE** 
 
 Found more accelerometer codes to try because the others were giving unrealistic values. May be because the pins were not soldered onto the ADLX335 chip:
-* [Calibration and Programming](https://learn.adafruit.com/adafruit-analog-accelerometer-breakouts?view=all#calibration-and-programming) Consisted of a button that was not present for our setup.
+* [Calibration and Programming](https://learn.adafruit.com/adafruit-analog-accelerometer-breakouts?view=all#calibration-and-programming) Consisted of a button that was not present for our setup. Discarded because it kept giving the same data points. Might be the result of not having the button.
 * [Looked at but did not use code](http://www.instructables.com/id/Interfacing-ADXL335-with-ARDUINO/)
 * [GitHub Accelerometer code](https://gist.github.com/nthdesign/407ea40ae035269dd3cfd7ec81402281) Used at first, but discarded because I was not sure how certain values were obtained and was not able to interpret.
 * [Accelerometer code being used now](https://www.sunfounder.com/learn/lesson-15-adxl335-super-kit.html)
