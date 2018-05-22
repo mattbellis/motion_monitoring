@@ -10,3 +10,7 @@ Adafruit drivers notes please!
 * There
 
 *Italics*  **Bold** ***BOLD IT***
+
+```
+int x = 10;
+```
