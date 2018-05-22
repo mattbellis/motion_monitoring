@@ -5,3 +5,8 @@ Things we learned.
 Adafruit drivers notes please! 
 
 [Google](http://www.google.com)
+
+* Hi
+* There
+
+*Italics*  **Bold** ***BOLD IT***
