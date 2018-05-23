@@ -68,6 +68,12 @@ Created just to look at the graph it gives. Need to think of a more useful and p
 
 Tried connecting the accelerometer to the SD card arduino using the [Build It!](https://learn.adafruit.com/adafruit-data-logger-shield/light-and-temperature-logger-use-it) part of the data logging shield tutorial, then used [Use It!](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-2) to try and compile both codes, but started getting values that did not resemble what was originally obtained. Values were much higher than originally and not constant when the accelerometer was at rest. Possible that my own interpretation of the wiring is the cause.
 
+Reverted original pins for the accelerometer on the data loggin shield and it gave the original data sets (thanks Bellis!).
+
+[Code combining accelerometer and shield](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-3) is giving some errors, specifically that certain functions were not "members" of what was being called. Troubleshooting this now.
+
+**Thurdsay's task: Troubleshoot code and try to save data onto the SD card.**
+
 Things we learned. 
 
 Adafruit drivers notes please! 
