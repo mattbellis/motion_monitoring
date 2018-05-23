@@ -29,7 +29,7 @@ Found more accelerometer codes to try because the others were giving unrealistic
 * [Accelerometer code being used now](https://www.sunfounder.com/learn/lesson-15-adxl335-super-kit.html)
 
 Started looking into SD card reader:
-* [Adafruit Data Logging Shield](https://learn.adafruit.com/adafruit-data-logger-shield/overview) needs a circular battery at all times to use.
+* [Adafruit Data Logging Shield](https://learn.adafruit.com/adafruit-data-logger-shield/overview) needs a circular battery at all times to keep the internal clock up-to-date, whether it works or not (but is said to last for five years). Removing the battery resets the clock and needs [this](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock) to reset it.
 
 Plotting data from Arduino:
 * [Need to sync MatLab and Arduino IDE](https://arduino.stackexchange.com/questions/17319/plotting-a-real-time-graph-of-sensor-data-from-arduino-on-processing-matlab-or)
@@ -62,7 +62,11 @@ ylabel('Y Coordinates')
 zlabel('Z Coordinates')
 ```
 
-Created just to look at the graph it gives. Need to think of a more useful and practical way to analyze the data and what it would mean. Need to incorporate time stamps in order to analyze how long one particular coordinate the accelerometer was at.
+Created just to look at the graph it gives. Need to think of a more useful and practical way to analyze the data and what it would mean. Need to incorporate time stamps in order to analyze how long one particular coordinate the accelerometer was at. Will convert to Python soon.
+
+***NOTE*** When using SD Cards, always check with the CardInfo sketch on the IDE to see if it is a FAT32 or FAT16 type and size of memory. This also helps check if the card is a legit one and good to use, otherwise an error will appear asking if the card is inserted.
+
+Tried connecting the accelerometer to the SD card arduino using the [Build It!](https://learn.adafruit.com/adafruit-data-logger-shield/light-and-temperature-logger-use-it) part of the data logging shield tutorial, then used [Use It!](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-2) to try and compile both codes, but started getting values that did not resemble what was originally obtained. Values were much higher than originally and not constant when the accelerometer was at rest. Possible that my own interpretation of the wiring is the cause.
 
 Things we learned. 
 
