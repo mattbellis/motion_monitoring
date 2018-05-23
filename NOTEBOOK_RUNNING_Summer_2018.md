@@ -38,6 +38,12 @@ Most websites searched, there is no way to directly write data toa text file fro
 
 ***Wednesday's task: get SD card arduino to work and save data to analyze***
 
+**Wednesday, May 23rd**
+
+Searched for the [Adafruit Data Logging Shield Battery](https://www.adafruit.com/product/1141) at several different stores; might be a special battery that must be ordered from Adafruit website.
+
+Working on allowing the accelerometer to take data points over a period of time and manually transferring the data to a .txt file in order to use MatLab to analyze it.
+
 Things we learned. 
 
 Adafruit drivers notes please! 
