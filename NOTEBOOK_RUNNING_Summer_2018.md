@@ -47,7 +47,6 @@ Working on allowing the accelerometer to take data points over a period of time 
 ```
 %% Read in CSV file
 Accelerometer_Data = 'Accelerometer_Data.csv';
-M = csvread(Accelerometer_Data);
 
 %% Divide columns into variables
 xData = csvread('Accelerometer_Data.csv',0,0,[0 0 67 0]);
@@ -62,6 +61,8 @@ xlabel('X Coordinates')
 ylabel('Y Coordinates')
 zlabel('Z Coordinates')
 ```
+
+Created just to look at the graph it gives. Need to think of a more useful and practical way to analyze the data and what it would mean. Need to incorporate time stamps in order to analyze how long one particular coordinate the accelerometer was at.
 
 Things we learned. 
 
