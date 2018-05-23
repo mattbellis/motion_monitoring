@@ -70,7 +70,7 @@ Tried connecting the accelerometer to the SD card arduino using the [Build It!](
 
 Reverted original pins for the accelerometer on the data loggin shield and it gave the original data sets (thanks Bellis!).
 
-[Code combining accelerometer and shield](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-3) is giving some errors, specifically that certain functions were not "members" of what was being called. Troubleshooting this now.
+[Code combining accelerometer and shield](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-3) is giving some errors, specifically that certain functions were not "members" of what was being called (*"class DateTime' has no member named 'get'*). Troubleshooting this now.
 
 ***Thurdsay's task: Troubleshoot code and try to save data onto the SD card.***
 
