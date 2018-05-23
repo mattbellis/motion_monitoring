@@ -72,6 +72,180 @@ Reverted original pins for the accelerometer on the data loggin shield and it ga
 
 [Code combining accelerometer and shield](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-3) is giving some errors, specifically that certain functions were not "members" of what was being called (*"class DateTime' has no member named 'get'*). Troubleshooting this now.
 
+```
+#include <SPI.h>
+#include <SD.h>
+#include <Wire.h>
+#include "RTClib.h"
+
+#define LOG_INTERVAL 1000 // mills between entries
+#define SYNC_INTERVAL 1000 // mills between calls to write data to card
+uint32_t syncTime = 0; // Time of last sync()
+
+#define ECHO_TO_SERIAL 1 // Echo data to serial port
+#define WAIT_TO_START 0 // Wait for serial input in setup()
+
+#define redLEDpin 2 // Digital pins connected to LEDs
+#define greenLEDpin 3
+
+const int xPin = A2;
+const int yPin = A1;
+const int zPin = A0;
+
+RTC_PCF8523 RTC; // Define the Real Time Clock object
+const int chipSelect = 10; // Digital Pin 10 is connected to the SD card
+
+File logfile;
+
+void error(char *str)
+{
+  Serial.print("error: ");
+  Serial.println(str);
+
+  digitalWrite(redLEDpin, HIGH); // Turns on when there is an error
+
+  while(1);
+}
+
+void setup(void)
+{
+  Serial.begin(9600);
+  Serial.println();
+
+  #if WAIT_TO_START
+    Serial.println("Type any character to start");
+    while(!Serial.available());
+  #endif
+
+  //Initialize the SD Card
+  Serial.print("Initializing SD card...");
+  pinMode(10, OUTPUT);
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Card failed, or not present");
+
+    return;
+  }
+  Serial.println("Card initialized.");
+
+  // Create a new file
+  char filename[] = "Accel_SD00.csv";
+  for (uint8_t i = 0; i < 100; i++) {
+    filename[6] = i/10 + '0';
+    filename[7] = i%10 + '0';
+    if (! SD.exists(filename)){
+      // Only open a new fiel if it doesn't exist
+      logfile = SD.open(filename, FILE_WRITE);
+      break; // Leaves the loop
+  }
+}
+
+  if (! logfile) {
+    error("Couldn't create file.");
+  }
+
+  Serial.print("Logging to: ");
+  Serial.println(filename);
+
+  Wire.begin();
+  if (!RTC.begin()) {
+    logfile.println("RTC failed.");
+#if ECHO_TO_SERIAL
+  Serial.println("RTC failed.");
+#endif
+  }
+
+  logfile.println("mills,time,xData,yData,ZData");
+#if ECHO_TO_SERIAL
+  Serial.print("millis,time,xData,yData,zData");
+#endif
+/*
+#if ECHO_TO_SERIAL
+  if (logfile.writeError || !logfile.sync()) {
+    error("write header");
+#endif
+  }
+ */
+  pinMode(redLEDpin, OUTPUT);
+  pinMode(greenLEDpin, OUTPUT);
+}
+
+
+void loop(void)
+{
+  DateTime now;
+
+  delay((LOG_INTERVAL -1) - (millis() % LOG_INTERVAL));
+  digitalWrite(greenLEDpin, HIGH);
+
+  // Log milliseconds since starting
+  uint32_t m = millis();
+  logfile.print(m);
+  logfile.print(", ");
+#if ECHO_TO_SERIAL
+  Serial.print(m);
+  Serial.print(", ");
+#endif
+
+  now = RTC.now(); <-------- ERROR HERE ----------
+  logfile.print(now.get());
+  logfile.print(", ");
+  logfile.print(now.year(), DEC);
+  logfile.print("/");
+  logfile.print(now.month(), DEC);
+  logfile.print("/");
+  logfile.print(now.day(), DEC);
+  logfile.print(" ");
+  logfile.print(now.hour(), DEC);
+  logfile.print(":");
+  logfile.print(now.minute(), DEC);
+  logfile.print(":");
+  logfile.print(now.second(), DEC);
+#if ECHO_TO_SERIAL
+  Serial.print(now.get());
+  Serial.print(", ");
+  Serial.print(now.year(), DEC):
+  Serial.print("/");
+  Serial.print(now.month(), DEC);
+  Serial.print("/");
+  Serial.print(now.day(), DEC);
+  Serial.print(" ");
+  Serial.print(now.hour(), DEC);
+  Serial.print(":");
+  Serial.print(now.minute(), DEC);
+  Serial.print(":");
+  Serial.print(now.second(), DEC);
+#endif
+
+  int x = analogRead(xPin);
+  delay(1);
+  int y = analogRead(yPin);
+  delay(1);
+  int z = analogRead(zPin);
+
+  float zero_G = 512.0; // ADC is 0 ~ 1023, the zero G output
+  // equals to Vs / 2
+
+  float scale = 102.3; // Accelerometer sensitivity is 330mv/g
+
+  logfile.print(((float)x - 331.5) / 65 * 9.8);
+  logfile.print("\t");
+  logfile.print(((float)y - 329.5) / 68.5 * 9.8);
+  logfile.print("\t");
+  logfile.print(((float)z - 340) / 68 * 9.8);
+  logfile.print("\n");
+#if ECHO_TO_SERIAL
+  Serial.print(((float)x - 331.5) / 65 * 9.8);
+  Serial.print("\t");
+  Serial.print(((float)y - 329.5) / 68.5 * 9.8);
+  Serial.print("\t");
+  Serial.print(((float)z - 340) / 68 * 9.8);
+  Serial.print("\n");
+ #endif
+
+  digitalWrite(greenLEDpin, LOW);
+}
+```
+
 ***Thurdsay's task: Troubleshoot code and try to save data onto the SD card.***
 
 Things we learned. 
