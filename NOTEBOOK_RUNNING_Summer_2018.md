@@ -44,6 +44,25 @@ Searched for the [Adafruit Data Logging Shield Battery](https://www.adafruit.com
 
 Working on allowing the accelerometer to take data points over a period of time and manually transferring the data to a .txt file in order to use MatLab to analyze it.
 
+```
+%% Read in CSV file
+Accelerometer_Data = 'Accelerometer_Data.csv';
+M = csvread(Accelerometer_Data);
+
+%% Divide columns into variables
+xData = csvread('Accelerometer_Data.csv',0,0,[0 0 67 0]);
+yData = csvread('Accelerometer_Data.csv',0,1,[0 1 67 1]);
+zData = csvread('Accelerometer_Data.csv',0,2,[0 2 67 2]);
+
+%% Plot Data
+figure(1)
+plot3(xData,yData,zData)
+title('X, Y, and Z Accelerometer Coordinates')
+xlabel('X Coordinates')
+ylabel('Y Coordinates')
+zlabel('Z Coordinates')
+```
+
 Things we learned. 
 
 Adafruit drivers notes please! 
