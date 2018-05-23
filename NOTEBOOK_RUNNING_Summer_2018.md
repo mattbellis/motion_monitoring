@@ -72,7 +72,7 @@ Reverted original pins for the accelerometer on the data loggin shield and it ga
 
 [Code combining accelerometer and shield](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-3) is giving some errors, specifically that certain functions were not "members" of what was being called. Troubleshooting this now.
 
-**Thurdsay's task: Troubleshoot code and try to save data onto the SD card.**
+***Thurdsay's task: Troubleshoot code and try to save data onto the SD card.***
 
 Things we learned. 
 
