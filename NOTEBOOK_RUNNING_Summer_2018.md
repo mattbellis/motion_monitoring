@@ -462,7 +462,9 @@ at the end of the logfile.prints. This did not help.
 
 Tried the ReadWrite example on the IDE and it was able to succesfully store a test.txt file on the SD card, so it is the code and the placement of where everything is that's the problem. Playing around with the way in which the code is written to try and mimic the ReadWrite example.
 
-***Five and a half hours later*** finally got the data to correctly place the data on the SD card! The card must be removed in between the Arduino taking data points (after each loop), otherwise the file will remain open and not save the data. 
+***Five and a half hours later*** finally got the data to correctly place the data on the SD card! The card must be removed in between the Arduino taking data points (after each loop), otherwise the file will remain open and not save the data. When putting the SD card back in, the file continues writing to the same one instead of erasing it and rewriting new data points, even when the code is re-uploaded onto the arduino board.
+
+***Friday's task: Convert MatLab code to Python, get comfortable with Git (including creating the repo), and start looking into battery packs to power Adafruit Metro for portable accelerometer readings.***
 
 Things we learned. 
 
