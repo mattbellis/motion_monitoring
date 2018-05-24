@@ -432,7 +432,7 @@ Found the corrections and updated the code from [this forum on Arduino](https://
 
 Once I made these changes, the code was able to be verified and then uploaded to the Metro board. Now running into an error with creating a file after the SD card is initialized.
 
-Created an if-else statement for creating the file because, when creating the file, it would automatically jump to saying that it could not be made, so now it looks like
+Created an if-else statement for creating the file because, when creating the file, it would automatically jump to saying that it could not be made, so now it looks like:
 
 ```
  // Create a new file
@@ -453,7 +453,12 @@ Created an if-else statement for creating the file because, when creating the fi
 
 Once making this change, the file was able to be created, and data was collected in the Serial Monitor, and the LED light was indicating that it was also being transferred to the SD card. Still needs to be checked.
 
+SD card had nothing stored on it. Tried adding:
 
+```
+logfile.close();
+```
+at the end of the logfile.prints.
 
 Things we learned. 
 
