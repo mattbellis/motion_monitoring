@@ -462,6 +462,8 @@ at the end of the logfile.prints. This did not help.
 
 Tried the ReadWrite example on the IDE and it was able to succesfully store a test.txt file on the SD card, so it is the code and the placement of where everything is that's the problem. Playing around with the way in which the code is written to try and mimic the ReadWrite example.
 
+***Five and a half hours later*** finally got the data to correctly place the data on the SD card! The card must be removed in between the Arduino taking data points (after each loop), otherwise the file will remain open and not save the data. 
+
 Things we learned. 
 
 Adafruit drivers notes please! 
