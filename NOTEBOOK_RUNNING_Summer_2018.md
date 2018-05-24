@@ -430,7 +430,7 @@ void loop(void)
 
 Found the corrections and updated the code from [this forum on Arduino](https://arduino.stackexchange.com/questions/3354/why-is-my-real-time-clock-getting-the-wrong-time-from-my-pc)
 
-Once I made these changes, the code was able to be verified and then uploaded to the Metro board. Now running into an error with initializing the SD card.
+Once I made these changes, the code was able to be verified and then uploaded to the Metro board. Now running into an error with creating a file after the SD card is initialized.
 
 
 Things we learned. 
