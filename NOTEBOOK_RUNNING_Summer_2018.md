@@ -458,7 +458,9 @@ SD card had nothing stored on it. Tried adding:
 ```
 logfile.close();
 ```
-at the end of the logfile.prints.
+at the end of the logfile.prints. This did not help.
+
+Tried the ReadWrite example on the IDE and it was able to succesfully store a test.txt file on the SD card, so it is the code and the placement of where everything is that's the problem. Playing around with the way in which the code is written to try and mimic the ReadWrite example.
 
 Things we learned. 
 
