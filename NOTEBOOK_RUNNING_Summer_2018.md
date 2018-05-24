@@ -464,6 +464,143 @@ Tried the ReadWrite example on the IDE and it was able to succesfully store a te
 
 ***Five and a half hours later*** finally got the data to correctly place the data on the SD card! The card must be removed in between the Arduino taking data points (after each loop), otherwise the file will remain open and not save the data. When putting the SD card back in, the file continues writing to the same one instead of erasing it and rewriting new data points, even when the code is re-uploaded onto the arduino board.
 
+```
+#include <RTClib.h>
+#include <Time.h>
+#include <SPI.h>
+#include <SD.h>
+#include <Wire.h>
+#include "RTClib.h"
+
+#define LOG_INTERVAL 1000 // mills between entries
+#define SYNC_INTERVAL 1000 // mills between calls to write data to card
+uint32_t syncTime = 0; // Time of last sync()
+
+#define ECHO_TO_SERIAL 1 // Echo data to serial port
+#define WAIT_TO_START 0 // Wait for serial input in setup()
+
+#define greenLEDpin 2 // Digital pins connected to LEDs
+#define redLEDpin 3
+
+const int xPin = A2;  // Where the x-coordinate is connected to the board
+const int yPin = A1;  // Where the y-coordinate is connected to the board
+const int zPin = A0;  // Where the z-coordinate is connected to the board
+
+RTC_PCF8523 RTC; // Define the Real Time Clock object
+const int chipSelect = 10; // Digital Pin 10 is connected to the SD card
+
+File logfile;  // Defines the variable for the file
+
+void error(char *str)
+{
+  Serial.print("error: ");
+  Serial.println(str);
+
+  digitalWrite(redLEDpin, HIGH); // Turns on when there is an error
+
+  while(1);
+}
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  RTC.begin();
+  Serial.println();
+
+  //Initialize the SD Card
+  Serial.print("Initializing SD card...");
+  pinMode(10, OUTPUT);  // Always set for OUTPUT
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Card failed, or not present");
+
+    return;
+  }
+  Serial.println("Card initialized.");
+
+  pinMode(redLEDpin, OUTPUT); 
+  pinMode(greenLEDpin, OUTPUT);
+}
+
+void loop() {
+  DateTime now = RTC.now();  // Defines the date and time at that instant
+  
+  delay((LOG_INTERVAL -1) - (millis() % LOG_INTERVAL));  // Delays when the board takes points
+  digitalWrite(greenLEDpin, HIGH);  // Each data point collected turns on the green LED
+
+  // Log milliseconds since starting
+  uint32_t m = millis();
+  logfile.print(m);
+  logfile.print(", ");
+#if ECHO_TO_SERIAL  // ECHO_TO_SERIAL reiterates the data being written to the file to the serial monitor
+  Serial.print(m);
+  Serial.print(", ");
+#endif
+  
+  int x = analogRead(xPin);
+  delay(1);
+  int y = analogRead(yPin);
+  delay(1);
+  int z = analogRead(zPin);
+
+  float zero_G = 512.0; // ADC is 0 ~ 1023, the zero G output
+  // equals to Vs / 2
+
+  float scale = 102.3; // Accelerometer sensitivity is 330mv/g
+
+  logfile = SD.open("Accel_SD.csv", FILE_WRITE);
+
+if (logfile) {
+    logfile.print(now.year(), DEC);
+    logfile.print("/");
+    logfile.print(now.month(), DEC);
+    logfile.print("/");
+    logfile.print(now.day(), DEC);
+    logfile.print(" ");
+    logfile.print(now.hour(), DEC);
+    logfile.print(":");
+    logfile.print(now.minute(), DEC);
+    logfile.print(":");
+    logfile.print(now.second(), DEC);
+    logfile.print(" ");
+  #if ECHO_TO_SERIAL
+    Serial.print(now.year(), DEC);
+    Serial.print("/");
+    Serial.print(now.month(), DEC);
+    Serial.print("/");
+    Serial.print(now.day(), DEC);
+    Serial.print(" ");
+    Serial.print(now.hour(), DEC);
+    Serial.print(":");
+    Serial.print(now.minute(), DEC);
+    Serial.print(":");
+    Serial.print(now.second(), DEC);
+    Serial.print(" ");
+  #endif
+  }
+
+  logfile.print(((float)x - 331.5) / 65 * 9.8);
+  logfile.print("\t");
+  logfile.print(((float)y - 329.5) / 68.5 * 9.8);
+  logfile.print("\t");
+  logfile.print(((float)z - 340) / 68 * 9.8);
+  logfile.print("\n");
+#if ECHO_TO_SERIAL
+  Serial.print(((float)x - 331.5) / 65 * 9.8);
+  Serial.print("\t");
+  Serial.print(((float)y - 329.5) / 68.5 * 9.8);
+  Serial.print("\t");
+  Serial.print(((float)z - 340) / 68 * 9.8);
+  Serial.print("\n");
+ #endif
+
+  digitalWrite(greenLEDpin, LOW);  // Turns off green LED when the data has been written
+
+  logfile.close();
+}
+```
+
+I feel like the numbers used when determining the x, y, and z values can be changed to calibrate the accelerometer to create a localized "origin."
+
 ***Friday's task: Convert MatLab code to Python, get comfortable with Git (including creating the repo), and start looking into battery packs to power Adafruit Metro for portable accelerometer readings.***
 
 Things we learned. 
