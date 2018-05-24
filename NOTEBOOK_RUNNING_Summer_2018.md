@@ -428,9 +428,31 @@ void loop(void)
 }
 ```
 
-Found the corrections and updated the code from [this forum on Arduino](https://arduino.stackexchange.com/questions/3354/why-is-my-real-time-clock-getting-the-wrong-time-from-my-pc)
+Found the corrections and updated the code from [this forum on Arduino](https://arduino.stackexchange.com/questions/3354/why-is-my-real-time-clock-getting-the-wrong-time-from-my-pc).
 
 Once I made these changes, the code was able to be verified and then uploaded to the Metro board. Now running into an error with creating a file after the SD card is initialized.
+
+Created an if-else statement for creating the file because, when creating the file, it would automatically jump to saying that it could not be made, so now it looks like
+
+```
+ // Create a new file
+  char filename[] = "Accel_SD00.csv";
+  for (uint8_t i = 0; i < 100; i++) {
+    filename[8] = i/10 + '0';
+    filename[9] = i%10 + '0';
+    if (! SD.exists(filename)){
+      // Only open a new fiel if it doesn't exist
+      logfile = SD.open(filename, FILE_WRITE);
+      break; // Leaves the loop
+  }
+    else (! logfile); {
+      error("Couldn't create file.");
+  }
+}
+```
+
+Once making this change, the file was able to be created, and data was collected in the Serial Monitor, and the LED light was indicating that it was also being transferred to the SD card. Still needs to be checked.
+
 
 
 Things we learned. 
