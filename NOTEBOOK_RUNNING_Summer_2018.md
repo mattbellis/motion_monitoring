@@ -605,6 +605,12 @@ I feel like the numbers used when determining the x, y, and z values can be chan
 
 ***Friday's task: Convert MatLab code to Python, get comfortable with Git (including creating the repo), and start looking into battery packs to power Adafruit Metro for portable accelerometer readings.***
 
+**Friday, May 25th**
+
+With Bellis' help, python code was created to analyze the .csv file created. Looking at the [Newton-Cotes Formulas](https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas) to get an idea on how to start integrating the data to get velocity and position from acceleration.
+
+
+
 Things we learned. 
 
 Adafruit drivers notes please! 
