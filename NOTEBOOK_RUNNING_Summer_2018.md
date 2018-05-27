@@ -609,7 +609,9 @@ I feel like the numbers used when determining the x, y, and z values can be chan
 
 With Bellis' help, python code was created to analyze the .csv file created. Looking at the [Newton-Cotes Formulas](https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas) to get an idea on how to start integrating the data to get velocity and position from acceleration.
 
+Created code that tried to integrate data. Will find easier way to do so with Python.
 
+Seeing if using the "WAIT_TO_SERIAL" call that would start the setup can be used to close the file manually in order to remove the SD card using [sample code from this forum](http://forum.arduino.cc/index.php?topic=43860.0) to have the call react to the input and [this one](https://stackoverflow.com/questions/23096366/how-to-stop-a-loop-arduino) to exit the loop. Bellis was able to help rearrange the code to make it actually work.
 
 Things we learned. 
 
