@@ -1,3 +1,21 @@
+# Week 2 (5/28/2018 - 6/1/2018)
+
+**Tuesday, May 29th**
+
+Last Friday, we were able to get the code to stop when a certain character was inputted into the Serial Monitor, but it did not close the file appropriately so none of the points were saved onto the SD card.
+
+Going to try and integrate the data already collected, figure out if there is a manual way to calibrate the accelerometer or if a button is needed, and look up battery packs that could make the accelerometer portable.
+
+Found that [calibrating the x, y, and z axes](https://forum.arduino.cc/index.php?topic=140494.0) consists of using the min and max values when the accelerometer is laying still to determine the Zero G value as well as the "resolution" (assuming this means the correction factor?) to calibrate the values.
+
+* [This site](https://chionophilous.wordpress.com/2011/08/26/accelerometer-calibration-ii-simple-methods/) helped realize that there were certain values that were needed to find the Zero G value and not just random numbers.
+
+Using the calibration method made certain values zero at certain alignments of the accelerometer. Need it to show that when it is not moving, all values must be zero.
+
+* [The datasheet for the ADXL335](https://www.sparkfun.com/datasheets/Components/SMD/adxl335.pdf) to try and figure out whether the accelerometer is measuring accelerations or orientations of the accelerometer itself.
+
+
+
 # Week 1 (5/21/2018-5/25/2018)
 
 **Monday, May 21st**
