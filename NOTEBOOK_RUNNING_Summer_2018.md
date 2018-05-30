@@ -20,10 +20,10 @@ Used the Python code to create an example of how to integrate acceleration to ve
 
 Restructured the code so that when the accelerometer is not moving, the x and y points are relatively zero while the z points are at 9.8 m/s^2 (half of that at the moment). Still playing with the numbers to figure out what we actually want the serial monitor to show. Could not get the Arduino code to save the data points onto the SD card for some reason.
 
-***Thursday's Task: 
+***Thursday's Task:***
 * Get data to save on SD card.
 * Try to analyze data on SD card.
-* Figure out accelerations for x, y, and z axes.***
+* Figure out accelerations for x, y, and z axes.
 
 # Week 1 (5/21/2018-5/25/2018)
 
