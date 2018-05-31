@@ -20,10 +20,23 @@ Used the Python code to create an example of how to integrate acceleration to ve
 
 Restructured the code so that when the accelerometer is not moving, the x and y points are relatively zero while the z points are at 9.8 m/s^2 (half of that at the moment). Still playing with the numbers to figure out what we actually want the serial monitor to show. Could not get the Arduino code to save the data points onto the SD card for some reason.
 
+**NOTE: Arduino data files must have the file name in ALL CAPS and UNDER eight characters or it will not save correctly.**
+
 ***Thursday's Task:***
-* Get data to save on SD card.
-* Try to analyze data on SD card.
+* Try to analyze data on SD card and integrate for velocity and position.
 * Figure out accelerations for x, y, and z axes.
+
+**Thursday, May 31st**
+
+Saved some test data on the SD card, used the Jupyter notebook to analyze the data succesfully!
+
+Took seven different trials doing various different speeds while walking and also different directions. Since the breadboard was forgotten in the lab, had to hold the accelerometer between fingers to keep it "steady." There was some wobbling when moving. Created graphs for all accelerations, velocities, and positions for each instance. Did not generate positon graphs as I had hoped they would, such as showing the path that the accelerometer took, instead they were straight lines. 
+
+Might have to play around with the calibration again? 
+
+Converted all of the times to seconds instead of milliseconds and the numbers look more believable now. Created 3D plots with the new data and still does not track the actual path taken.
+
+***Tasks for Friday: Talk with Bellis about graphs generated, finish up remaining tasks on sheet (in lab), come up with new game plan for Week 3.***
 
 # Week 1 (5/21/2018-5/25/2018)
 
