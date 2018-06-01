@@ -38,6 +38,12 @@ Converted all of the times to seconds instead of milliseconds and the numbers lo
 
 ***Tasks for Friday: Talk with Bellis about graphs generated, finish up remaining tasks on sheet (in lab), come up with new game plan for Week 3.***
 
+**Friday, June 1st**
+
+Looked at the graphs with Bellis and retook some of data to see where the accelerometer was picking up on my footsteps.
+
+***Tasks for Monday: Regroup with Bellis to figure out a game plan. Half way done!!***
+
 # Week 1 (5/21/2018-5/25/2018)
 
 **Monday, May 21st**
