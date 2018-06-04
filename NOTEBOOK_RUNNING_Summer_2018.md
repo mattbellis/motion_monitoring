@@ -1,3 +1,35 @@
+# Week 3 (6/4/2018 - 6/8/2018)
+
+**Monday, June 4th**
+
+Reevaluated approach to this project: abandoning the plotting-position-from-acceleration path and now focusing on solely acceleration. Going to figure out best way to implement two accelerometers (on feet or on hands?) and make the whole system portable with a battery pack.
+
+* [Possible battery pack option](https://www.adafruit.com/product/1959) that is also the cheapest.
+* [Another option](https://www.adafruit.com/product/1565), slightly more expensive.
+**Found portable battery pack in lab, currently charging it.**
+
+Based on last week's data, the accelerations recorded can show the footsteps that a person has taken. Knowing this, various walking styles will be recorded to analyze the accelerations in all directions and their magnitudes.
+
+Attaching two accelerometers to the board, the board can be attached to a belt or in a pack? Then long wires from the board to the accelerometers can be ran through shirt sleeves and attached to the end?
+
+***Unplugging the board from the computer once the program has been uploaded to connect to battery source... Wouldn't it reset the board??***
+* [DC jack has an on/off switch](https://www.adafruit.com/product/2488) (first bullet point) which can supply the power while the program is being uploaded to the board!
+* [USB-to-DC-jack attachment](https://www.adafruit.com/product/2697)
+* [Ordering this attachment](https://www.amazon.com/HUACAM-HC05-Barrel-Power-Cable/dp/B01303TWZ2/ref=sr_1_3?ie=UTF8&qid=1528127502&sr=8-3&keywords=usb+to+barrel+jack) to use with the board.
+
+Differentiating acceleration data yields the jerk of a system (according to Bellis [and this Wikipedia article](https://en.wikipedia.org/wiki/Jerk_(physics))). It also loses one value, thus it cannot be plotted with the times.
+* Is it the first or last number that is removed?
+* Is it possible to remove one time variable so that the number of items within each array are the same?
+
+**Took the first and last entry of the time array and was able to get a plot. Not sure if that is the correct way to handle this.**
+
+Looking into how to get serial readings (and eventually saved on SD card) from two accelerometers on one Metro board.
+* [This](http://forum.arduino.cc/index.php?topic=312246.0) may have helped to get an idea of how to get readings from two accelerometers.
+
+**[Fitbit SDK](https://dev.fitbit.com/)**
+
+***Tasks for Tuesday: Figure out why two accelerometers on one board is not working, start comparing different walking styles on one graph, think ahead to how a computer would interpret different walking styles.***
+
 # Week 2 (5/28/2018 - 6/1/2018)
 
 **Tuesday, May 29th**
