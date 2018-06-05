@@ -30,6 +30,14 @@ Looking into how to get serial readings (and eventually saved on SD card) from t
 
 ***Tasks for Tuesday: Figure out why two accelerometers on one board is not working, start comparing different walking styles on one graph, think ahead to how a computer would interpret different walking styles.***
 
+**Tuesday, June 5th**
+
+Was able to get the two accelerometers to work, but there must be a problem with the connection when both are hooked up because the X and Y accelerations for the second one are consistently 1023. When hooked up separately, they give values though. Looking up why that is.
+
+Created graphs comparing the data collected when "stumbling" and walking. Have to figure out how a computer would be able to tell the difference between the two.
+
+***Tasks for Wednesday: Continue figuring out connections/code for both accelerometers, ways to get a computer to tell the difference in walking styles, meet with Bellis if nothing still doesn't work.***
+
 # Week 2 (5/28/2018 - 6/1/2018)
 
 **Tuesday, May 29th**
