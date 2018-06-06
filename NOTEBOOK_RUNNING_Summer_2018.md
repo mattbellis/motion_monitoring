@@ -38,6 +38,14 @@ Created graphs comparing the data collected when "stumbling" and walking. Have t
 
 ***Tasks for Wednesday: Continue figuring out connections/code for both accelerometers, ways to get a computer to tell the difference in walking styles, meet with Bellis if nothing still doesn't work.***
 
+**Wednesday, June 6th**
+
+Found out that the X and Y inputs were not giving readings because [SDA and SCL](https://learn.adafruit.com/adafruit-shield-compatibility/data-logging-shield-assembled) are connected to Analog Pins 4 and 5. Have to figure out how to get both on the logging shield so that both of their data can be collected onto the SD card.
+
+Starting to add the push button to the system, that way recording and saving data can be easier.
+
+***Tasks for Thursday: Figure out push button set up, try to see if there is a way to get two accelerometers on the data shield, continue to figure out data analysis.***
+
 # Week 2 (5/28/2018 - 6/1/2018)
 
 **Tuesday, May 29th**
