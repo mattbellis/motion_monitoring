@@ -46,6 +46,10 @@ Starting to add the push button to the system, that way recording and saving dat
 
 ***Tasks for Thursday: Figure out push button set up, try to see if there is a way to get two accelerometers on the data shield, continue to figure out data analysis.***
 
+**Thursday, June 7th**
+
+Realized I forgot a resistor that would help properly make the push button work, but found [this forum](http://www.instructables.com/id/Arduino-Button-with-no-resistor/) that gave a code without the resistor because Arduinos have internal pull-up resistors that can be used. [This schematic/circuit diagram](https://www.arduino.cc/en/Tutorial/Button) shows how to connect the push button.
+
 # Week 2 (5/28/2018 - 6/1/2018)
 
 **Tuesday, May 29th**
