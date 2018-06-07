@@ -50,6 +50,20 @@ Starting to add the push button to the system, that way recording and saving dat
 
 Realized I forgot a resistor that would help properly make the push button work, but found [this forum](http://www.instructables.com/id/Arduino-Button-with-no-resistor/) that gave a code without the resistor because Arduinos have internal pull-up resistors that can be used. [This schematic/circuit diagram](https://www.arduino.cc/en/Tutorial/Button) shows how to connect the push button.
 
+Was able to get the push button to work solely on the Metro board, not when the data shield was attached. With the data shield, the program could not upload to the board for some reason.
+
+Got the program to load onto the board when data shield is connected, but it does not work; all lights remain on.
+
+Using the breadboard again just to figure out how to get it to save each new variable when the button is pressed. Trying to get it so that when it is first pushed, it starts logging data to the SD card, and when it is pressed again, it stops logging data. So far, I've tried:
+* [Looked at this](https://www.arduino.cc/en/Tutorial/Switch), have not tried it yet, though I am.
+* [This](http://forum.arduino.cc/index.php?topic=253093.0)
+* [Actually tried this one](http://www.instructables.com/id/Most-Simplest-Toggle-Switch-With-Arduino/)
+* [Tried this too](https://arduino.stackexchange.com/questions/3479/how-to-toggle-led-on-button-press)
+
+Tried [this code](https://www.arduino.cc/en/Tutorial/Switch), but it gives the same results as the others that were tried: turns off the LEDs when the button is pressed and turns them on when the button is not. Not what we're aiming for... Maybe looking at this from the wrong perspective or not using the right terminology for what I am looking for...
+
+***Tasks for Friday: Talk with Bellis about results from today, try to get push button to work, think about the two accelerometer problem, continue data analysis.***
+
 # Week 2 (5/28/2018 - 6/1/2018)
 
 **Tuesday, May 29th**
