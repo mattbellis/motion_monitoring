@@ -104,6 +104,12 @@ Converted all of the times to seconds instead of milliseconds and the numbers lo
 
 ***Tasks for Friday: Talk with Bellis about graphs generated, finish up remaining tasks on sheet (in lab), come up with new game plan for Week 3.***
 
+**Friday, June 8th**
+
+Received the USB-to-DC-jack cord and was able to power and work the push button with the power supply. Seems as though that any program that was uploaded to the board before being turned off is still on the board, so there is no concern that it would be wiped once it is taken off of the USB.
+
+Maybe the push button can be used to stop logging data entries since there is a reset button that could restart the program to take new data points. Should make the code be able to create new files if one already exists instead of continuing to add on to the same one or manually.
+
 **Friday, June 1st**
 
 Looked at the graphs with Bellis and retook some of data to see where the accelerometer was picking up on my footsteps.
