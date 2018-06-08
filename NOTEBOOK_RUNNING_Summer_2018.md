@@ -110,6 +110,8 @@ Received the USB-to-DC-jack cord and was able to power and work the push button 
 
 Maybe the push button can be used to stop logging data entries since there is a reset button that could restart the program to take new data points. Should make the code be able to create new files if one already exists instead of continuing to add on to the same one or manually.
 
+Able to get the program to create separate new files each time, but it opens two at once and does not store any information.
+
 **Friday, June 1st**
 
 Looked at the graphs with Bellis and retook some of data to see where the accelerometer was picking up on my footsteps.
