@@ -1,3 +1,17 @@
+# Week 4 (6/11/2018 - 6/15/2018)
+
+**Monday, June 11th**
+
+Bellis fixed the opening-two-files problem on Friday. Have to figure out the push button and an extra accelerometer on the data shield now.
+
+Met with Bellis to go over the [changing state of the push button](http://tymkrs.tumblr.com/post/19734219441/the-four-pin-switch-hooking-it-up) in order to get the onboard LED lights to flash and stop. Going to incorporate his code to try and make the red and green lights flash with different states, and then hopefully, get it to start and stop recording data onto the SD card.
+
+Got Red/Green LED light state change to work! Time to get it to work with the SD card.
+
+New code writes files to SD card, but creates two open files, and then closes the file before it begins printing accelerometer measurements. Stops/starts recording like it should after the initial run.
+
+***Tasks for Tuesday: Meet with Bellis to figure out push button-SD card logic, start creating cases for the accelerometer to be 3d printed, work on academic poster, data analysis (maybe??)***
+
 # Week 3 (6/4/2018 - 6/8/2018)
 
 **Monday, June 4th**
