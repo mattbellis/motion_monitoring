@@ -12,6 +12,14 @@ New code writes files to SD card, but creates two open files, and then closes th
 
 ***Tasks for Tuesday: Meet with Bellis to figure out push button-SD card logic, start creating cases for the accelerometer to be 3d printed, work on academic poster, data analysis (maybe??)***
 
+**Tuesday, June 12th**
+
+Found out that when the button is pushed, it is actually in a low state, as opposed to a high state as thought!
+
+Code not doing exactly what is expected because it may be getting disconnected when the button is pressed. However, [flush](https://www.arduino.cc/en/serial/flush) helps solve the problem of the files being empty.
+
+***Tasks for Wednesday: Start designing case for the system, data analysis (maybe??), take more data points.***
+
 # Week 3 (6/4/2018 - 6/8/2018)
 
 **Monday, June 4th**
