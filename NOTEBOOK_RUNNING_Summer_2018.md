@@ -20,6 +20,12 @@ Code not doing exactly what is expected because it may be getting disconnected w
 
 ***Tasks for Wednesday: Start designing case for the system, data analysis (maybe??), take more data points.***
 
+**Wednesday, June 13th**
+
+Connected the entire set up to a battery pack and walked around campus to collect several sets of data. Changed out some of the wires to make it more compact. Thinking of using a [solderable protoboard](https://www.sparkfun.com/products/12070) (not the exact one that will be used; just an example) to make the accelerometer/push button setup more permanent.
+
+***Tasks for Thursday: Gather more data around the house with other members of the family, figure out how to analyze the data.***
+
 # Week 3 (6/4/2018 - 6/8/2018)
 
 **Monday, June 4th**
