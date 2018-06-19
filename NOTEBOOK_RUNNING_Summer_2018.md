@@ -1,3 +1,19 @@
+# Week 5 (6/18/2018 - 6/22/2018)
+
+**Monday, June 18th**
+
+Analyzed data taken while at home. Tried to take data of a five year-old's movements, but the connections were disconnected while she was moving. 
+
+Possible solderable breadboards to make the connetions to the accelerometer more permanent:
+* [This one](https://www.amazon.com/dp/B01M7R5YIB/ref=sxbs_sxwds-stppvp_3?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=6297546923292665688&pd_rd_wg=7BYmY&pf_rd_r=6E5VXVWSD5ZX54QF1ZC0&pf_rd_s=desktop-sx-bottom-slot&pf_rd_t=301&pd_rd_i=B01M7R5YIB&pd_rd_w=uSjmY&pf_rd_i=solderable+breadboard&pd_rd_r=643dff0e-8fc2-4f6c-86fa-a1c76526c67f&ie=UTF8&qid=1529334016&sr=3) (**Ended up ordering these ones**)
+* Or [this](https://www.amazon.com/PRT-12070-Sparkfun-Solder-Able-Breadboard/dp/B06ZYY3SF3/ref=sr_1_5?s=hi&ie=UTF8&qid=1529334395&sr=1-5&keywords=solderable+breadboard)
+* Or [these](https://www.amazon.com/5X10cm-Copper-Prototype-Single-Breadboard/dp/B072N4G2F8/ref=sr_1_10?s=hi&ie=UTF8&qid=1529334413&sr=1-10&keywords=solderable+breadboard)
+
+**Tuesday, June 19th**
+
+Starting analysis on computer identification of different walking styles.
+
+
 # Week 4 (6/11/2018 - 6/15/2018)
 
 **Monday, June 11th**
@@ -25,6 +41,10 @@ Code not doing exactly what is expected because it may be getting disconnected w
 Connected the entire set up to a battery pack and walked around campus to collect several sets of data. Changed out some of the wires to make it more compact. Thinking of using a [solderable protoboard](https://www.sparkfun.com/products/12070) (not the exact one that will be used; just an example) to make the accelerometer/push button setup more permanent.
 
 ***Tasks for Thursday: Gather more data around the house with other members of the family, figure out how to analyze the data.***
+
+**Thursday, June 14th**
+
+Took various sets of data around the house and outside.
 
 # Week 3 (6/4/2018 - 6/8/2018)
 
