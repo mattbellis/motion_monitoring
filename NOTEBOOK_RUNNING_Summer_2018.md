@@ -19,13 +19,17 @@ Got the solderable breadboards and attempted to connect the accelerometer and pu
 
 Shortened all of the wires on the Arduino board so that the device could be more compact.
 
-Connected everything together and tested it out to record on to the SD card. Creates files and saves them, but the x acceleration is not recording what it should be possibly because of the connections that were soldered on. There's also a problem with it stopping recording when the button is pressed depending on how the new board is positioned; when it is loose and not held straight, pressing the button will make the program say "closing file" and stops recording, but when it is held straight and closer to the shield, it does not read out the "closing file" command when the button is pressed and instead just slows down the recording. Switching between holding the board flat and not makes it go between these two scenarios.
-
 **Thursday, June 21st**
 
 Made a little diagram to see how I wanted the connections to go on the breadboard and then used a new one to make the connections. Have to get the accelerometer and push button out of the old one or might leave them in there and use different ones.
 
-Gonna have to start making the design for the case on TinkerCAD somehow.
+Gonna have to start making the design for the case on TinkerCAD somehow. Measurements for case:
+* Width: 5.3 cm
+* Length: 7 cm
+* Height: 3.5 - 4 cm
+
+Connected everything together and tested it out to record on to the SD card. Creates files and saves them, but the x acceleration is not recording what it should be possibly because of the connections that were soldered on. There's also a problem with it stopping recording when the button is pressed depending on how the new board is positioned; when it is loose and not held straight, pressing the button will make the program say "closing file" and stops recording, but when it is held straight and closer to the shield, it does not read out the "closing file" command when the button is pressed and instead just slows down the recording. Switching between holding the board flat and not makes it go between these two scenarios.
+
 
 # Week 4 (6/11/2018 - 6/15/2018)
 
