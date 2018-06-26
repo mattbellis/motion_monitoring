@@ -4,6 +4,13 @@
 
 Going to test out all of the connections on the board to see if there are any cold solders that are responsible for the way that the device was working on Friday. May replace the solder joints with wires that connect to have more reliable connections.
 
+Replaced the pins on a new (and our last) accelerometer so that they were not all connected together underneath to make it easier to remove the accelerometer in case something was not working right.
+
+**Tuesday, June 26th**
+
+Used a new solderable breadboard, the new accelerometer, and another push button to redo the entire circuit since it was noticed that there was no voltage going to the x pin on the last model. Replaced the solder connections with wires to simplify the connections and guarantee that there were no cold solder joints.
+
+EVERYTHING WORKS PERFECTLY.
 
 
 # Week 5 (6/18/2018 - 6/22/2018)
