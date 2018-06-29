@@ -10,7 +10,15 @@ Replaced the pins on a new (and our last) accelerometer so that they were not al
 
 Used a new solderable breadboard, the new accelerometer, and another push button to redo the entire circuit since it was noticed that there was no voltage going to the x pin on the last model. Replaced the solder connections with wires to simplify the connections and guarantee that there were no cold solder joints.
 
-EVERYTHING WORKS PERFECTLY.
+EVERYTHING WORKS PERFECTLY. Have to figure out how to calibrate the sensors correctly.
+
+**Wednesday, June 27th**
+
+Worked on the symposium poster for the day.
+
+**Friday, June 29th**
+
+The last day of research! Going over with Bellis last minute details on poster, and possible ways to continue this project for advanced lab.
 
 
 # Week 5 (6/18/2018 - 6/22/2018)
